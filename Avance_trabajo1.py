@@ -2,7 +2,6 @@
 import numpy as np
 
 
-#CLASES--------------------------------------------------------------------------------------
 class Vertice:
     def __init__(self,clave):
         self.id = clave
@@ -22,7 +21,6 @@ class Vertice:
 
     def obtenerPonderacion(self,vecino):
         return self.conectadoA[vecino]
-#----------------------------------------------------------------------------------------------
 class Grafo:
     def __init__(self):
         self.listaVertices = {}
@@ -50,7 +48,6 @@ class Grafo:
             nv = self.agregarVertice(a)
 
         self.listaVertices[de].agregarVecino(self.listaVertices[a], costo)
-        #self.listaVertices[a].agregarVecino(self.listaVertices[de], costo)
     def obtenerVertices(self):
         return self.listaVertices.keys()
 
@@ -96,7 +93,6 @@ def DFS(origen):
         else:
 
             DFS(vertice)
-#------------------------------------ DIJKSTRA ----------------------------------------------------------
 
 inf = 999999
 
@@ -126,8 +122,7 @@ def dijkstra(grafosei, startVertice, endVertice):
     no_revisado = [node for node in costos]
     node = mejor_camino(costos,no_revisado)
     while no_revisado:
-        # Esto es para debugear
-        #print(f"No revisado: {no_revisado} ")
+
         soloCosto = costos[node]
         costoPequeño = grafosei[node]
         for contador in costoPequeño:
@@ -137,12 +132,11 @@ def dijkstra(grafosei, startVertice, endVertice):
         no_revisado.pop(no_revisado.index(node))
         node = mejor_camino(costos, no_revisado)
 
-    # Debug
+
 
     print(f"Costos: {costos}")
     print(f"El costo para ir desde {startVertice} a {endVertice} es: {costos[endVertice]}")
 
-    # Imprimir
 
     if costos[endVertice] < inf:
         camino = [endVertice]
