@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if camino is None %}
+<p>No se pudo encontrar un camino</p>
+{% else %}
+<ul>
+    <li>Camino encontrado: </li>
+    <li>{{ camino }}</li>
+    <li>Costo final: {{ costo }}</li>
+
+{% endif %}
+</ul>
+</body>
+</html>

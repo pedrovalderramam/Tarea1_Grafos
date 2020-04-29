@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+{% for inicio, final, n_caminos in resultados %}
+    <li>Entre {{ inicio }}  y  {{ final }} hay {{ n_caminos }} caminos de largo {{ n }}</li>
+
+{% endfor %}
+
+</ul>
+</body>
+</html>

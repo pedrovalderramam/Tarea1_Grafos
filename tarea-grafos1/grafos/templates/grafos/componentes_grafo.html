@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+
+<form method="post">
+    {% csrf_token %}
+    {{ vertices_form.management_form }}
+    <p>Vertices</p>
+    {% for vertice in vertices_form%}
+        {{ vertice|linebreaks }}
+    {% endfor %}
+
+    <p>Aristas</p>
+    {% for arista in aristas_form%}
+        {{ arista|linebreaks }}
+    {% endfor %}
+    <input type="submit" value="Submit">
+</form>
